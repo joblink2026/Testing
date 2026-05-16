@@ -17,16 +17,12 @@ const router = express.Router();
 //Route to get all products
 router.get('/', getProducts);
 
-//Route to get a single product by id
 router.get('/product/:id', getProduct);
 
-//Route to add a product
 router.post("/product", addProduct);
 
-//Route to send products based on men,women and kid
 router.get('/category/:category', getByCategory);
 
-//Route to get top rated products
 router.get('/filter/topRated', getTopRated);
 
 //Route to get best sellers
