@@ -1,6 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+const showcaseItems = [
+  { src: "/GenInfo/adidas.jpg", name: "Adidas", to: "/search/adidas" },
+  { src: "/GenInfo/nike.png", name: "Nike", to: "/search/nike" },
+  { src: "/GenInfo/skechers.jpg", name: "Skechers", to: "/search/skechers" },
+  { src: "/GenInfo/puma.jpg", name: "Puma", to: "/search/puma" },
+];
+
 const GenInfo = () => {
   const data = [
     {
@@ -53,18 +60,11 @@ export default GenInfo;
 export const Brands = () => {
   const navigate = useNavigate();
 
-  const data = [
-    { src: "/GenInfo/adidas.jpg", name: "Adidas", to: "/search/adidas" },
-    { src: "/GenInfo/nike.png", name: "Nike", to: "/search/nike" },
-    { src: "/GenInfo/skechers.jpg", name: "Skechers", to: "/search/skechers" },
-    { src: "/GenInfo/puma.jpg", name: "Puma", to: "/search/puma" },
-  ];
-
   return (
     <div className="flex flex-col items-center my-16 w-full">
       <p className="child:ring-white font-bold mb-6">Top Brands</p>
       <div className="flex flex-wrap justify-center">
-        {data.map((elem, id) => (
+        {showcaseItems.map((elem, id) => (
           <div
             key={id}
             className="relative w-[340px] h-[340px] mx-2 mb-6 hover:text-white"
@@ -99,7 +99,7 @@ export const BestSellers = () => {
     <div className="flex flex-col items-center my-16 w-full">
       <p className="child:ring-white font-bold mb-6">Best Sellers</p>
       <div className="flex flex-wrap justify-center">
-        {data.map((elem, id) => (
+        {showcaseItems.map((elem, id) => (
           <div
             key={id}
             className="relative w-[340px] h-[340px] mx-2 mb-6 hover:text-white"
